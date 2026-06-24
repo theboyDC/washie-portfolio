@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Washie Mbeleki — Software Engineering Student at WethinkCode, Johannesburg. Junior Developer specialising in Python & Full-Stack development.">
-    <title>Washie Mbeleki | Software Engineer</title>
+    <meta name="description" content="Washington Mbeleki — Software Engineering Student at WeThinkCode_, Johannesburg. Junior Developer specialising in Python & Full-Stack development.">
+    <title>Washington Mbeleki | Software Engineer</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -811,6 +811,142 @@
             .h-name { font-size:2.4rem; }
             .stat-grid { grid-template-columns:1fr; }
         }
+
+        /* ============================================================
+           SPOTIFY-THEMED PROJECTS SECTION
+        ============================================================ */
+        :root {
+            --sp-green:      #1DB954;
+            --sp-green-dim:  rgba(29,185,84,0.12);
+            --sp-green-glow: rgba(29,185,84,0.25);
+            --sp-dark:       #121212;
+            --sp-card:       #181818;
+            --sp-card-hover: #282828;
+        }
+
+        #projects {
+            background: var(--sp-dark);
+        }
+
+        /* Section label goes Spotify green */
+        #projects .section-label {
+            color: var(--sp-green);
+        }
+
+        /* Cards use Spotify palette */
+        #projects .pcard {
+            background: var(--sp-card);
+            border-color: transparent;
+            border-radius: 8px;
+        }
+
+        #projects .pcard:hover {
+            background: var(--sp-card-hover);
+            border-color: transparent;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            transform: translateY(-6px);
+        }
+
+        /* Role line in Spotify green */
+        #projects .pcard-role {
+            color: var(--sp-green);
+        }
+
+        /* Accent left-bar on hover */
+        #projects .pcard::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: var(--sp-green);
+            border-radius: 8px 0 0 8px;
+            opacity: 0;
+            transition: var(--t);
+        }
+
+        #projects .pcard {
+            position: relative;
+        }
+
+        #projects .pcard:hover::before {
+            opacity: 1;
+        }
+
+        /* Badge colours — Spotify palette */
+        #projects .badge-win {
+            background: var(--sp-green);
+            color: #000;
+        }
+
+        #projects .badge-hack {
+            background: var(--sp-green-dim);
+            border: 1px solid rgba(29,185,84,0.35);
+            color: var(--sp-green);
+        }
+
+        #projects .badge-acad {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #b3b3b3;
+        }
+
+        /* Tech tags — Spotify subtle */
+        #projects .tech {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255,255,255,0.1);
+            color: #b3b3b3;
+        }
+
+        /* GitHub link — Spotify outline */
+        #projects .plink {
+            color: #fff;
+            border-color: rgba(255,255,255,0.2);
+            background: transparent;
+        }
+
+        #projects .plink:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.35);
+        }
+
+        /* Live Site — Spotify green pill play button */
+        #projects .plink.live {
+            background: var(--sp-green);
+            color: #000;
+            border: none;
+            border-radius: 20px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        #projects .plink.live:hover {
+            background: #1ed760;
+            box-shadow: 0 4px 20px var(--sp-green-glow);
+            transform: scale(1.04) translateY(-1px);
+        }
+
+        /* Disabled link */
+        #projects .plink.off {
+            color: #535353;
+            border-color: rgba(255,255,255,0.06);
+        }
+
+        /* "Now Playing" dot animation on hovered card title */
+        #projects .pcard:hover .pcard-title::before {
+            content: '▶ ';
+            color: var(--sp-green);
+            font-size: 0.75em;
+        }
+
+        /* Section header sub-text */
+        #projects .section-sub {
+            color: #b3b3b3;
+        }
+
+        /* Divider line between body and footer of card */
+        #projects .pcard-foot {
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
     </style>
 </head>
 <body>
@@ -844,7 +980,7 @@
     <div class="container hero-content">
         <p class="h-greet">// Hello, world! I'm</p>
 
-        <h1 class="h-name grad">Washie Mbeleki</h1>
+        <h1 class="h-name grad">Washington Mbeleki</h1>
 
         <div class="h-role">
             <span id="typed"></span><span class="cursor"></span>
@@ -859,7 +995,7 @@
         </div>
 
         <p class="h-desc">
-            Software Engineering student at <strong>WethinkCode</strong>, driven to build tech
+            Software Engineering student at <strong>WeThinkCode_</strong>, driven to build tech
             that solves real problems across South Africa. I specialise in
             <strong>backend systems & Python</strong> but love tackling the full stack.
         </p>
@@ -904,8 +1040,8 @@
             <!-- Left: text + stats -->
             <div class="about-text reveal">
                 <p>
-                    I'm <strong>Washie Mbeleki</strong>, a Software Engineering student at
-                    <strong>WethinkCode</strong> — Johannesburg's leading coding academy dedicated
+                    I'm <strong>Washington Mbeleki</strong>, a Software Engineering student at
+                    <strong>WeThinkCode_</strong> — Johannesburg's leading coding academy dedicated
                     to growing African tech talent. What started as curiosity about how things
                     work has become a genuine obsession with building things that work well.
                 </p>
@@ -918,8 +1054,8 @@
                 <p>
                     I thrive under pressure and in collaboration. At the e-Gov Hackathon,
                     our team shipped a full product in record time and <strong>placed 3rd nationally</strong>.
-                    I'm looking for a junior role where I can keep shipping, keep learning,
-                    and make a real dent.
+                    I led both the Code Clinics and Robot World projects at WeThinkCode_ — I'm
+                    looking for a junior role where I can keep shipping and keep growing.
                 </p>
 
                 <div class="stat-grid">
@@ -956,11 +1092,11 @@
                         <br>
                         <span class="kw">class</span> <span class="fn">Developer</span>:<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">__init__</span>(<span class="slf">self</span>):<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slf">self</span>.name&nbsp;&nbsp;&nbsp;&nbsp; = <span class="st">"Washie Mbeleki"</span><br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slf">self</span>.school&nbsp;&nbsp; = <span class="st">"WethinkCode"</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slf">self</span>.name&nbsp;&nbsp;&nbsp;&nbsp; = <span class="st">"Washington Mbeleki"</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slf">self</span>.school&nbsp;&nbsp; = <span class="st">"WeThinkCode_"</span><br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slf">self</span>.location = <span class="st">"Johannesburg 🇿🇦"</span><br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slf">self</span>.stack&nbsp;&nbsp;&nbsp; = [<span class="st">"Python"</span>, <span class="st">"JS"</span>, <span class="st">"Java"</span>]<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slf">self</span>.open_to&nbsp; = <span class="st">"Junior dev roles"</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slf">self</span>.open_to&nbsp; = <span class="st">"Roles &amp; Internships"</span><br>
                         <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">goal</span>(<span class="slf">self</span>):<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> {<br>
@@ -1052,13 +1188,10 @@
                 <div class="tags">
                     <span class="tag hi">System Design</span>
                     <span class="tag hi">Problem Solving</span>
-                    <span class="tag hi">Agile / Scrum</span>
                     <span class="tag">Data Structures</span>
                     <span class="tag">Algorithms</span>
                     <span class="tag">Team Collaboration</span>
                     <span class="tag">Git & GitHub</span>
-                    <span class="tag">SQLite</span>
-                    <span class="tag">REST APIs</span>
                 </div>
             </div>
 
@@ -1080,15 +1213,15 @@
 
         <div class="projects-grid">
 
-            <!-- ─── ThusoHealth ─────────────────────────────────────── -->
+            <!-- ─── Thuso Health ────────────────────────────────────── -->
             <div class="pcard reveal">
                 <div class="pcard-head">
                     <div class="badges">
                         <span class="badge badge-hack">Hackathon</span>
                         <span class="badge badge-win">🏆 3rd Place — e-Gov</span>
                     </div>
-                    <h3 class="pcard-title">ThusoHealth</h3>
-                    <p class="pcard-role">Full-Stack Developer (Lead) · Team: Error 404</p>
+                    <h3 class="pcard-title">Thuso Health</h3>
+                    <p class="pcard-role">Full-Stack Developer · Team: Error 404</p>
                 </div>
                 <div class="pcard-body">
                     <div class="psec">
@@ -1136,12 +1269,12 @@
                         <span class="badge badge-acad">Academic Project</span>
                     </div>
                     <h3 class="pcard-title">Code Clinics</h3>
-                    <p class="pcard-role">Backend Developer · Group Project</p>
+                    <p class="pcard-role">Lead Developer · Group Project</p>
                 </div>
                 <div class="pcard-body">
                     <div class="psec">
                         <p class="psec-label">⚡ The Problem</p>
-                        <p>Students at WethinkCode struggled to understand complex concepts and debug code efficiently, with <strong>no structured peer-support system</strong> in place.</p>
+                        <p>Students at WeThinkCode_ struggled to understand complex concepts and debug code efficiently, with <strong>no structured peer-support system</strong> in place.</p>
                     </div>
                     <div class="psec">
                         <p class="psec-label">✅ The Solution</p>
@@ -1174,7 +1307,7 @@
                         <span class="badge badge-acad">Academic Project</span>
                     </div>
                     <h3 class="pcard-title">Robot World</h3>
-                    <p class="pcard-role">Python Developer · Group Project</p>
+                    <p class="pcard-role">Lead Developer · Group Project</p>
                 </div>
                 <div class="pcard-body">
                     <div class="psec">
@@ -1183,15 +1316,15 @@
                     </div>
                     <div class="psec">
                         <p class="psec-label">✅ The Solution</p>
-                        <p>An interactive grid-based simulation letting users <strong>program a robot's path and actions via CLI commands</strong>, with real-time visual feedback powered by Pygame.</p>
+                        <p>An interactive grid-based simulation built in <strong>Java using OOP principles</strong>, letting users program a robot's path and actions via CLI — demonstrating real-world class design and encapsulation.</p>
                     </div>
                 </div>
                 <div class="pcard-foot">
                     <div class="tech-tags">
-                        <span class="tech">Python</span>
+                        <span class="tech">Java</span>
                         <span class="tech">OOP</span>
-                        <span class="tech">Pygame</span>
-                        <span class="tech">UnitTest</span>
+                        <span class="tech">Classes & Objects</span>
+                        <span class="tech">Inheritance</span>
                         <span class="tech">CLI</span>
                     </div>
                     <div class="plinks">
@@ -1219,7 +1352,7 @@
         <div class="section-header reveal">
             <p class="section-label">04 / Contact</p>
             <h2 class="section-title">Let's Build Something</h2>
-            <p class="section-sub">Open to junior roles, internships, or just a good conversation about tech. Reach out anytime.</p>
+            <p class="section-sub">Open to junior roles, internships, collaborations, or just a good conversation about tech. Reach out anytime.</p>
         </div>
 
         <div class="contact-grid">
@@ -1230,7 +1363,7 @@
                 <p>
                     Whether you're a recruiter, a fellow developer, or someone with an
                     interesting problem to solve — I'd love to hear from you.
-                    I'm currently <strong style="color:#22c55e;">open to opportunities</strong>.
+                    I'm currently <strong style="color:#22c55e;">open to junior roles, internships &amp; collaborations</strong>.
                 </p>
 
                 <div class="cdetails">
@@ -1323,7 +1456,7 @@
 ================================================================ -->
 <footer>
     <div class="container">
-        <p>Designed &amp; built by <span>Washie Mbeleki</span> &middot; Johannesburg, ZA &middot; <span>2025</span></p>
+        <p>Designed &amp; built by <span>Washington Mbeleki</span> &middot; Johannesburg, ZA &middot; <span>2025</span></p>
     </div>
 </footer>
 
