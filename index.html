@@ -3,37 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Washington Mbeleki — Software Engineering Student at WeThinkCode_, Johannesburg. Junior Developer specialising in Python & Full-Stack development.">
+    <meta name="description" content="Washington Mbeleki — Software Engineering Student at WeThinkCode_, Johannesburg. Open to junior roles, internships & collaborations.">
     <title>Washington Mbeleki | Software Engineer</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         /* ============================================================
-           DESIGN TOKENS
+           SPOTIFY DESIGN TOKENS
         ============================================================ */
         :root {
-            --bg-primary:    #080b14;
-            --bg-secondary:  #0d1117;
-            --bg-card:       #111827;
-            --accent:        #00d4ff;
-            --accent-sec:    #7c3aed;
-            --accent-glow:   rgba(0, 212, 255, 0.12);
-            --text-primary:  #f1f5f9;
-            --text-secondary:#94a3b8;
-            --text-muted:    #475569;
-            --border:        rgba(255,255,255,0.07);
-            --border-accent: rgba(0,212,255,0.28);
-            --font:          'Inter', sans-serif;
-            --mono:          'JetBrains Mono', monospace;
-            --nav-h:         68px;
-            --ease:          cubic-bezier(0.4,0,0.2,1);
-            --t:             all 0.3s var(--ease);
-            --shadow:        0 4px 24px rgba(0,0,0,0.4);
-            --glow:          0 0 30px rgba(0,212,255,0.14);
+            --sp-black:      #121212;
+            --sp-dark:       #181818;
+            --sp-card:       #282828;
+            --sp-card-hover: #3e3e3e;
+            --sp-green:      #1DB954;
+            --sp-green-lt:   #1ed760;
+            --sp-green-glow: rgba(29,185,84,0.18);
+            --sp-green-dim:  rgba(29,185,84,0.1);
+            --sp-white:      #FFFFFF;
+            --sp-gray:       #B3B3B3;
+            --sp-muted:      #535353;
+            --sp-border:     rgba(255,255,255,0.08);
+            --sp-border-g:   rgba(29,185,84,0.3);
+
+            --font:  'Inter', sans-serif;
+            --mono:  'JetBrains Mono', monospace;
+            --nav-h: 68px;
+            --ease:  cubic-bezier(0.4,0,0.2,1);
+            --t:     all 0.25s var(--ease);
+            --shadow: 0 8px 32px rgba(0,0,0,0.6);
         }
 
         /* ============================================================
@@ -44,24 +45,22 @@
 
         body {
             font-family: var(--font);
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            background: var(--sp-black);
+            color: var(--sp-white);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* ============================================================
-           SCROLLBAR
-        ============================================================ */
+        /* Spotify green scrollbar */
         ::-webkit-scrollbar { width:4px; }
-        ::-webkit-scrollbar-track { background:var(--bg-secondary); }
-        ::-webkit-scrollbar-thumb { background:var(--accent); border-radius:10px; }
+        ::-webkit-scrollbar-track { background: var(--sp-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--sp-green); border-radius:10px; }
 
         /* ============================================================
-           TYPOGRAPHY HELPERS
+           TYPOGRAPHY
         ============================================================ */
         .grad {
-            background: linear-gradient(135deg, var(--accent), var(--accent-sec));
+            background: linear-gradient(135deg, var(--sp-green), var(--sp-green-lt));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -69,56 +68,50 @@
 
         .section-label {
             font-family: var(--mono);
-            color: var(--accent);
-            font-size: 0.8rem;
-            letter-spacing: 0.22em;
+            color: var(--sp-green);
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
         }
 
         .section-title {
-            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-size: clamp(1.75rem, 4vw, 2.6rem);
             font-weight: 800;
             line-height: 1.15;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.75rem;
         }
 
         .section-sub {
-            color: var(--text-secondary);
-            font-size: 1.02rem;
+            color: var(--sp-gray);
+            font-size: 1rem;
             max-width: 580px;
         }
 
         /* ============================================================
            LAYOUT
         ============================================================ */
-        .container {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        section { padding: 6rem 0; }
-
-        .section-header { margin-bottom: 3.5rem; }
+        .container { max-width:1080px; margin:0 auto; padding:0 1.5rem; }
+        section { padding: 5.5rem 0; }
+        .section-header { margin-bottom: 3rem; }
 
         /* ============================================================
            NAVBAR
         ============================================================ */
         #navbar {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top:0; left:0; right:0;
             height: var(--nav-h);
             z-index: 1000;
             transition: var(--t);
         }
 
         #navbar.scrolled {
-            background: rgba(8,11,20,0.88);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            background: rgba(18,18,18,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--sp-border);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
         .nav-inner {
@@ -132,53 +125,64 @@
         }
 
         .nav-logo {
-            font-family: var(--mono);
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--sp-white);
         }
 
-        .nav-logo span { color: var(--text-primary); }
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--sp-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-logo-icon svg { color: #000; }
+
+        .nav-logo span { color: var(--sp-green); font-family: var(--mono); }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 0.2rem;
+            gap: 0.15rem;
             list-style: none;
         }
 
         .nav-links a {
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--sp-gray);
             text-decoration: none;
-            padding: 0.45rem 0.8rem;
-            border-radius: 6px;
+            padding: 0.45rem 0.85rem;
+            border-radius: 20px;
             transition: var(--t);
+            letter-spacing: 0.02em;
         }
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--accent);
-            background: var(--accent-glow);
+            color: var(--sp-white);
+            background: rgba(255,255,255,0.1);
         }
 
-        /* CTA button in nav */
         .nav-hire {
-            background: linear-gradient(135deg, var(--accent), #0099cc) !important;
+            background: var(--sp-green) !important;
             color: #000 !important;
             font-weight: 700 !important;
-            padding: 0.45rem 1.1rem !important;
         }
 
         .nav-hire:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(0,212,255,0.3);
-            background: linear-gradient(135deg, var(--accent), #0099cc) !important;
+            background: var(--sp-green-lt) !important;
+            transform: scale(1.03);
         }
 
-        /* Hamburger */
         .nav-toggle {
             display: none;
             flex-direction: column;
@@ -190,9 +194,9 @@
         }
 
         .nav-toggle span {
-            width: 23px;
+            width: 22px;
             height: 2px;
-            background: var(--text-primary);
+            background: var(--sp-white);
             border-radius: 2px;
             transition: var(--t);
             display: block;
@@ -208,38 +212,39 @@
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.45rem;
+            gap: 0.5rem;
             padding: 0.72rem 1.6rem;
-            border-radius: 8px;
-            font-size: 0.93rem;
-            font-weight: 600;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
             font-family: var(--font);
             cursor: pointer;
             text-decoration: none;
             transition: var(--t);
             border: none;
+            letter-spacing: 0.04em;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent), #0099cc);
+            background: var(--sp-green);
             color: #000;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,212,255,0.32);
+            background: var(--sp-green-lt);
+            transform: scale(1.04);
+            box-shadow: 0 8px 24px var(--sp-green-glow);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--accent);
-            border: 1.5px solid var(--accent);
+            color: var(--sp-white);
+            border: 2px solid rgba(255,255,255,0.4);
         }
 
         .btn-outline:hover {
-            background: var(--accent-glow);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,212,255,0.18);
+            border-color: var(--sp-white);
+            transform: scale(1.04);
         }
 
         /* ============================================================
@@ -252,38 +257,35 @@
             position: relative;
             overflow: hidden;
             padding: 0;
+            background: var(--sp-black);
         }
 
-        /* Subtle grid overlay */
+        /* Subtle radial gradient from bottom-left — Spotify vibe */
         #hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background-image:
-                linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px);
-            background-size: 52px 52px;
-            animation: gridDrift 24s linear infinite;
+            background: radial-gradient(ellipse 70% 60% at 10% 90%, rgba(29,185,84,0.12) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 90% 10%, rgba(29,185,84,0.06) 0%, transparent 60%);
             pointer-events: none;
         }
 
-        @keyframes gridDrift { to { transform: translateY(52px); } }
-
-        /* Ambient glow orbs */
+        /* Animated green orb */
         .orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(90px);
-            opacity: 0.1;
+            filter: blur(100px);
+            opacity: 0.08;
             pointer-events: none;
+            animation: orbFloat 10s ease-in-out infinite;
         }
 
-        .orb-1 { width:520px; height:520px; background:var(--accent); top:-120px; right:-120px; animation:orb 9s ease-in-out infinite; }
-        .orb-2 { width:400px; height:400px; background:var(--accent-sec); bottom:-80px; left:-80px; animation:orb 9s ease-in-out infinite -4.5s; }
+        .orb-1 { width:600px; height:600px; background:var(--sp-green); top:-150px; right:-100px; }
+        .orb-2 { width:350px; height:350px; background:var(--sp-green); bottom:-80px; left:-80px; animation-delay:-5s; opacity:0.05; }
 
-        @keyframes orb {
+        @keyframes orbFloat {
             0%,100% { transform: translate(0,0) scale(1); }
-            50%      { transform: translate(18px,18px) scale(1.06); }
+            50%      { transform: translate(15px,15px) scale(1.04); }
         }
 
         .hero-content {
@@ -292,25 +294,94 @@
             padding-top: var(--nav-h);
         }
 
-        /* Staggered hero entrance animations */
-        .h-greet  { font-family:var(--mono); font-size:0.95rem; color:var(--accent); margin-bottom:0.9rem; opacity:0; animation:up 0.6s var(--ease) forwards 0.2s; }
-        .h-name   { font-size:clamp(2.8rem,7vw,4.8rem); font-weight:800; line-height:1.05; margin-bottom:0.5rem; opacity:0; animation:up 0.6s var(--ease) forwards 0.4s; }
-        .h-role   { font-size:clamp(1.1rem,2.5vw,1.65rem); color:var(--text-secondary); margin-bottom:1.25rem; min-height:2.1rem; opacity:0; animation:up 0.6s var(--ease) forwards 0.6s; }
-        .h-loc    { display:flex; align-items:center; gap:0.45rem; font-size:0.88rem; color:var(--text-muted); margin-bottom:1.4rem; opacity:0; animation:up 0.6s var(--ease) forwards 0.75s; }
-        .h-loc svg { color:var(--accent); flex-shrink:0; }
-        .h-desc   { color:var(--text-secondary); font-size:1rem; max-width:560px; line-height:1.85; margin-bottom:2.2rem; opacity:0; animation:up 0.6s var(--ease) forwards 0.9s; }
-        .h-desc strong { color:var(--text-primary); }
-        .h-cta    { display:flex; gap:0.9rem; flex-wrap:wrap; opacity:0; animation:up 0.6s var(--ease) forwards 1.05s; }
+        /* Staggered entrance */
+        .h-greet { font-family:var(--mono); font-size:0.9rem; color:var(--sp-green); margin-bottom:0.9rem; opacity:0; animation:up 0.6s var(--ease) forwards 0.2s; }
+        .h-name  { font-size:clamp(2.8rem,7vw,5rem); font-weight:900; line-height:1.0; margin-bottom:0.5rem; opacity:0; animation:up 0.6s var(--ease) forwards 0.4s; letter-spacing:-0.02em; }
+        .h-role  { font-size:clamp(1.05rem,2.5vw,1.55rem); color:var(--sp-gray); margin-bottom:1.1rem; min-height:2rem; opacity:0; animation:up 0.6s var(--ease) forwards 0.6s; }
+        .h-loc   { display:flex; align-items:center; gap:0.45rem; font-size:0.85rem; color:var(--sp-muted); margin-bottom:1.4rem; opacity:0; animation:up 0.6s var(--ease) forwards 0.75s; }
+        .h-loc svg { color:var(--sp-green); flex-shrink:0; }
+        .h-desc  { color:var(--sp-gray); font-size:0.98rem; max-width:520px; line-height:1.85; margin-bottom:2rem; opacity:0; animation:up 0.6s var(--ease) forwards 0.9s; }
+        .h-desc strong { color:var(--sp-white); }
+        .h-cta   { display:flex; gap:0.85rem; flex-wrap:wrap; margin-bottom:2.5rem; opacity:0; animation:up 0.6s var(--ease) forwards 1.0s; }
 
         @keyframes up {
             from { opacity:0; transform:translateY(20px); }
             to   { opacity:1; transform:translateY(0); }
         }
 
+        /* ── Hero contact bar ───────────────────────────── */
+        .hero-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: up 0.6s var(--ease) forwards 1.15s;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--sp-border);
+        }
+
+        .hero-contact-label {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--sp-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .hero-socials {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .h-slink {
+            width: 38px;
+            height: 38px;
+            background: var(--sp-dark);
+            border: 1px solid var(--sp-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--sp-gray);
+            transition: var(--t);
+        }
+
+        .h-slink:hover {
+            background: var(--sp-green);
+            border-color: var(--sp-green);
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .hero-contact-links {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .h-clink {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--sp-gray);
+            text-decoration: none;
+            transition: var(--t);
+        }
+
+        .h-clink svg { color: var(--sp-green); flex-shrink:0; }
+
+        .h-clink:hover { color: var(--sp-white); }
+
         /* Scroll indicator */
         .hero-scroll {
             position: absolute;
-            bottom: 2rem;
+            bottom: 1.75rem;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -318,26 +389,26 @@
             align-items: center;
             gap: 0.4rem;
             font-family: var(--mono);
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            letter-spacing: 0.12em;
+            font-size: 0.68rem;
+            color: var(--sp-muted);
+            letter-spacing: 0.14em;
             opacity: 0;
             animation: up 0.6s var(--ease) forwards 1.5s, bob 2s ease-in-out infinite 1.5s;
         }
 
-        .scroll-line { width:1px; height:38px; background:linear-gradient(to bottom,var(--accent),transparent); }
+        .scroll-line { width:1px; height:36px; background:linear-gradient(to bottom, var(--sp-green), transparent); }
 
         @keyframes bob {
             0%,100% { transform:translateX(-50%) translateY(0); }
             50%      { transform:translateX(-50%) translateY(6px); }
         }
 
-        /* Cursor blink */
+        /* Typing cursor */
         .cursor {
             display: inline-block;
             width: 2px;
-            height: 1.1em;
-            background: var(--accent);
+            height: 1.05em;
+            background: var(--sp-green);
             margin-left: 2px;
             vertical-align: text-bottom;
             animation: blink 1s step-end infinite;
@@ -348,82 +419,78 @@
         /* ============================================================
            ABOUT
         ============================================================ */
-        #about { background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); }
+        #about { background: var(--sp-dark); }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            gap: 4.5rem;
             align-items: center;
         }
 
         .about-text p {
-            color: var(--text-secondary);
+            color: var(--sp-gray);
             margin-bottom: 1.2rem;
-            font-size: 1rem;
+            font-size: 0.97rem;
             line-height: 1.9;
         }
 
-        .about-text p strong { color: var(--text-primary); }
+        .about-text p strong { color: var(--sp-white); }
 
         .stat-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0.85rem;
+            gap: 0.75rem;
             margin-top: 2rem;
         }
 
         .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.2rem;
+            background: var(--sp-card);
+            border-radius: 10px;
+            padding: 1.1rem;
             text-align: center;
             transition: var(--t);
+            border: 1px solid transparent;
         }
 
         .stat-card:hover {
-            border-color: var(--border-accent);
+            border-color: var(--sp-border-g);
             transform: translateY(-2px);
-            box-shadow: var(--glow);
+            box-shadow: 0 4px 20px var(--sp-green-glow);
         }
 
         .stat-num {
-            font-size: 1.9rem;
-            font-weight: 800;
+            font-size: 1.8rem;
+            font-weight: 900;
             display: block;
-            background: linear-gradient(135deg, var(--accent), var(--accent-sec));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--sp-green);
         }
 
         .stat-lbl {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-family: var(--mono);
-            color: var(--text-muted);
+            color: var(--sp-muted);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             margin-top: 0.2rem;
             display: block;
         }
 
-        /* Code snippet card */
+        /* Code card */
         .code-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
+            background: var(--sp-card);
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
         }
 
         .code-titlebar {
-            background: rgba(255,255,255,0.035);
-            padding: 0.7rem 1rem;
+            background: rgba(255,255,255,0.04);
+            padding: 0.65rem 1rem;
             display: flex;
             align-items: center;
-            gap: 0.45rem;
-            border-bottom: 1px solid var(--border);
+            gap: 0.4rem;
+            border-bottom: 1px solid var(--sp-border);
         }
 
         .dot { width:11px; height:11px; border-radius:50%; }
@@ -433,183 +500,214 @@
 
         .code-fname {
             font-family: var(--mono);
-            font-size: 0.75rem;
-            color: var(--text-muted);
+            font-size: 0.73rem;
+            color: var(--sp-muted);
             margin-left: 0.4rem;
         }
 
         .code-body {
-            padding: 1.25rem 1.4rem;
+            padding: 1.2rem 1.35rem;
             font-family: var(--mono);
-            font-size: 0.82rem;
-            line-height: 1.95;
+            font-size: 0.8rem;
+            line-height: 2;
         }
 
-        /* Syntax highlighting colours */
         .kw  { color:#c678dd; }
         .fn  { color:#61afef; }
         .st  { color:#98c379; }
         .cm  { color:#5c6370; font-style:italic; }
         .slf { color:#e06c75; }
-        .nu  { color:#d19a66; }
 
         /* ============================================================
            SKILLS
         ============================================================ */
-        #skills { background: var(--bg-secondary); }
+        #skills { background: var(--sp-black); }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.4rem;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.25rem;
         }
 
         .skill-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.8rem;
+            background: var(--sp-dark);
+            border-radius: 10px;
+            padding: 1.6rem;
             transition: var(--t);
+            border: 1px solid transparent;
         }
 
         .skill-card:hover {
-            border-color: var(--border-accent);
+            background: var(--sp-card);
+            border-color: var(--sp-border-g);
             transform: translateY(-3px);
-            box-shadow: var(--glow);
+            box-shadow: 0 8px 30px var(--sp-green-glow);
         }
 
         .skill-icon {
-            width: 42px;
-            height: 42px;
-            background: var(--accent-glow);
-            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            background: var(--sp-green-dim);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.9rem;
         }
 
-        .skill-title { font-size:0.97rem; font-weight:700; margin-bottom:0.15rem; }
-        .skill-sub { font-size:0.75rem; font-family:var(--mono); color:var(--text-muted); margin-bottom:1.25rem; }
+        .skill-title { font-size:0.95rem; font-weight:700; margin-bottom:0.15rem; }
+        .skill-sub   { font-size:0.72rem; font-family:var(--mono); color:var(--sp-muted); margin-bottom:1.1rem; }
 
-        .tags { display:flex; flex-wrap:wrap; gap:0.45rem; }
+        .tags { display:flex; flex-wrap:wrap; gap:0.4rem; }
 
         .tag {
             font-family: var(--mono);
-            font-size: 0.73rem;
-            padding: 0.3rem 0.68rem;
+            font-size: 0.7rem;
+            padding: 0.28rem 0.62rem;
             border-radius: 20px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--sp-border);
+            color: var(--sp-gray);
             transition: var(--t);
         }
 
-        .tag:hover { background:var(--accent-glow); border-color:var(--border-accent); color:var(--accent); }
-        .tag.hi    { background:var(--accent-glow); border-color:var(--border-accent); color:var(--accent); }
+        .tag:hover { background:var(--sp-green-dim); border-color:var(--sp-border-g); color:var(--sp-green); }
+        .tag.hi    { background:var(--sp-green-dim); border-color:var(--sp-border-g); color:var(--sp-green); }
 
         /* ============================================================
-           PROJECTS
+           PROJECTS — full Spotify
         ============================================================ */
-        #projects { background: var(--bg-primary); }
+        #projects { background: var(--sp-dark); }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-            gap: 1.6rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.4rem;
         }
 
         .pcard {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
+            background: var(--sp-card);
+            border-radius: 10px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             transition: var(--t);
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        /* Green left accent bar on hover */
+        .pcard::before {
+            content: '';
+            position: absolute;
+            left:0; top:0; bottom:0;
+            width: 3px;
+            background: var(--sp-green);
+            opacity: 0;
+            transition: var(--t);
+            border-radius: 10px 0 0 10px;
         }
 
         .pcard:hover {
-            border-color: var(--border-accent);
+            background: var(--sp-card-hover);
+            border-color: transparent;
             transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0,212,255,0.1), var(--shadow);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.6);
         }
 
-        .pcard-head { padding: 1.6rem 1.6rem 0; }
+        .pcard:hover::before { opacity:1; }
 
-        .badges { display:flex; gap:0.45rem; flex-wrap:wrap; margin-bottom:0.9rem; }
+        /* "▶ " prepended on hover via JS-free CSS */
+        .pcard:hover .pcard-title::before {
+            content: '▶ ';
+            color: var(--sp-green);
+            font-size: 0.72em;
+        }
+
+        .pcard-head { padding: 1.5rem 1.5rem 0; }
+
+        .badges { display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.85rem; }
 
         .badge {
             font-family: var(--mono);
-            font-size: 0.68rem;
-            padding: 0.22rem 0.6rem;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.58rem;
             border-radius: 20px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
+            font-weight: 700;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
         }
 
-        .badge-win  { background:linear-gradient(135deg,#f59e0b,#d97706); color:#000; }
-        .badge-hack { background:rgba(0,212,255,0.13); border:1px solid rgba(0,212,255,0.28); color:var(--accent); }
-        .badge-acad { background:rgba(124,58,237,0.18); border:1px solid rgba(124,58,237,0.35); color:#a78bfa; }
+        .badge-win  { background:var(--sp-green); color:#000; }
+        .badge-hack { background:var(--sp-green-dim); border:1px solid var(--sp-border-g); color:var(--sp-green); }
+        .badge-acad { background:rgba(255,255,255,0.08); border:1px solid var(--sp-border); color:var(--sp-gray); }
 
-        .pcard-title { font-size:1.25rem; font-weight:700; margin-bottom:0.2rem; }
-        .pcard-role  { font-size:0.75rem; font-family:var(--mono); color:var(--accent); margin-bottom:1.15rem; }
+        .pcard-title { font-size:1.2rem; font-weight:700; margin-bottom:0.2rem; }
+        .pcard-role  { font-size:0.72rem; font-family:var(--mono); color:var(--sp-green); margin-bottom:1.1rem; }
 
-        .pcard-body { padding:0 1.6rem; flex:1; }
+        .pcard-body { padding:0 1.5rem; flex:1; }
 
-        .psec { margin-bottom:0.9rem; }
-        .psec-label { font-size:0.67rem; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.14em; color:var(--text-muted); margin-bottom:0.3rem; }
-        .psec p { font-size:0.9rem; color:var(--text-secondary); line-height:1.7; }
-        .psec p strong { color:var(--text-primary); }
+        .psec { margin-bottom:0.85rem; }
+        .psec-label { font-size:0.65rem; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.15em; color:var(--sp-muted); margin-bottom:0.3rem; }
+        .psec p { font-size:0.88rem; color:var(--sp-gray); line-height:1.7; }
+        .psec p strong { color:var(--sp-white); }
 
-        .pcard-foot { padding:1.1rem 1.6rem 1.6rem; }
+        .pcard-foot {
+            padding: 1rem 1.5rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
 
-        .tech-tags { display:flex; flex-wrap:wrap; gap:0.38rem; margin-bottom:1rem; }
+        .tech-tags { display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:1rem; }
 
         .tech {
             font-family: var(--mono);
-            font-size: 0.7rem;
-            padding: 0.22rem 0.55rem;
-            border-radius: 5px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
-            color: var(--text-muted);
+            font-size: 0.68rem;
+            padding: 0.2rem 0.52rem;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--sp-gray);
         }
 
-        .plinks { display:flex; gap:0.7rem; flex-wrap:wrap; }
+        .plinks { display:flex; gap:0.65rem; flex-wrap:wrap; }
 
         .plink {
             display: inline-flex;
             align-items: center;
             gap: 0.38rem;
-            font-size: 0.83rem;
+            font-size: 0.8rem;
             font-weight: 600;
             text-decoration: none;
-            color: var(--accent);
-            padding: 0.45rem 0.9rem;
-            border-radius: 7px;
-            border: 1px solid var(--border-accent);
+            color: var(--sp-white);
+            padding: 0.42rem 0.85rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
             transition: var(--t);
         }
 
-        .plink:hover { background:var(--accent-glow); transform:translateY(-1px); }
+        .plink:hover { background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.4); }
 
+        /* Spotify green pill for live link */
         .plink.live {
-            background: linear-gradient(135deg, var(--accent), #0099cc);
+            background: var(--sp-green);
             color: #000;
             border: none;
+            font-weight: 700;
         }
 
-        .plink.live:hover { box-shadow:0 4px 14px rgba(0,212,255,0.3); }
+        .plink.live:hover {
+            background: var(--sp-green-lt);
+            transform: scale(1.04);
+            box-shadow: 0 4px 18px var(--sp-green-glow);
+        }
 
-        .plink.off { color:var(--text-muted); border-color:var(--border); pointer-events:none; opacity:0.6; }
+        .plink.off { color:var(--sp-muted); border-color:rgba(255,255,255,0.07); pointer-events:none; }
 
         /* ============================================================
            CONTACT
         ============================================================ */
-        #contact { background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); }
+        #contact { background: var(--sp-black); }
 
         .contact-grid {
             display: grid;
@@ -618,22 +716,17 @@
             align-items: start;
         }
 
-        .contact-lhs h3 { font-size:1.35rem; font-weight:700; margin-bottom:0.9rem; }
-        .contact-lhs p  { color:var(--text-secondary); line-height:1.8; margin-bottom:1.8rem; font-size:0.98rem; }
+        .contact-lhs h3 { font-size:1.3rem; font-weight:700; margin-bottom:0.85rem; }
+        .contact-lhs p  { color:var(--sp-gray); line-height:1.8; margin-bottom:1.7rem; font-size:0.96rem; }
 
-        .cdetails { display:flex; flex-direction:column; gap:0.8rem; margin-bottom:1.8rem; }
+        .cdetails { display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.7rem; }
 
-        .cdetail {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            font-size: 0.93rem;
-        }
+        .cdetail { display:flex; align-items:center; gap:0.65rem; font-size:0.9rem; }
 
         .cdetail-icon {
-            width: 34px;
-            height: 34px;
-            background: var(--accent-glow);
+            width: 32px;
+            height: 32px;
+            background: var(--sp-green-dim);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -641,93 +734,91 @@
             flex-shrink: 0;
         }
 
-        .cdetail a { color:var(--text-secondary); text-decoration:none; transition:var(--t); }
-        .cdetail a:hover { color:var(--accent); }
-        .cdetail span { color:var(--text-secondary); }
+        .cdetail a { color:var(--sp-gray); text-decoration:none; transition:var(--t); }
+        .cdetail a:hover { color:var(--sp-green); }
+        .cdetail span { color:var(--sp-gray); }
 
-        .socials { display:flex; gap:0.65rem; }
+        .socials { display:flex; gap:0.6rem; }
 
         .slink {
-            width: 42px;
-            height: 42px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            background: var(--sp-dark);
+            border: 1px solid var(--sp-border);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            color: var(--text-secondary);
+            color: var(--sp-gray);
             transition: var(--t);
         }
 
         .slink:hover {
-            color: var(--accent);
-            border-color: var(--border-accent);
-            background: var(--accent-glow);
-            transform: translateY(-2px);
+            background: var(--sp-green);
+            border-color: var(--sp-green);
+            color: #000;
+            transform: scale(1.1);
         }
 
-        /* Contact form */
+        /* Form */
         .cform {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
+            background: var(--sp-dark);
+            border-radius: 12px;
             padding: 2rem;
+            border: 1px solid var(--sp-border);
         }
 
-        .fgroup { margin-bottom:1.15rem; }
+        .fgroup { margin-bottom:1.1rem; }
 
         .flabel {
             display: block;
-            font-size: 0.8rem;
+            font-size: 0.76rem;
             font-weight: 600;
             font-family: var(--mono);
-            color: var(--text-secondary);
-            margin-bottom: 0.45rem;
+            color: var(--sp-gray);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.05em;
         }
 
         .finput, .ftextarea {
             width: 100%;
-            background: rgba(255,255,255,0.035);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.7rem 0.95rem;
+            background: var(--sp-card);
+            border: 1px solid var(--sp-border);
+            border-radius: 6px;
+            padding: 0.68rem 0.9rem;
             font-family: var(--font);
-            font-size: 0.93rem;
-            color: var(--text-primary);
+            font-size: 0.92rem;
+            color: var(--sp-white);
             transition: var(--t);
             outline: none;
         }
 
         .finput:focus, .ftextarea:focus {
-            border-color: var(--accent);
-            background: rgba(0,212,255,0.03);
-            box-shadow: 0 0 0 3px rgba(0,212,255,0.09);
+            border-color: var(--sp-green);
+            background: rgba(29,185,84,0.04);
+            box-shadow: 0 0 0 3px rgba(29,185,84,0.1);
         }
 
-        .finput::placeholder, .ftextarea::placeholder { color:var(--text-muted); }
-
-        .ftextarea { min-height:130px; resize:vertical; }
-
-        .frow { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-
-        .fbtn { width:100%; padding:0.82rem; font-size:0.97rem; justify-content:center; }
+        .finput::placeholder, .ftextarea::placeholder { color:var(--sp-muted); }
+        .ftextarea { min-height:120px; resize:vertical; }
+        .frow { display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; }
+        .fbtn { width:100%; padding:0.8rem; font-size:0.95rem; justify-content:center; }
 
         /* Toast */
         #toast {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background: var(--bg-card);
-            border: 1px solid var(--accent);
-            border-radius: 12px;
-            padding: 0.95rem 1.4rem;
+            background: var(--sp-dark);
+            border: 1px solid var(--sp-green);
+            border-radius: 10px;
+            padding: 0.9rem 1.35rem;
             display: flex;
             align-items: center;
-            gap: 0.7rem;
-            font-size: 0.88rem;
-            color: var(--text-primary);
+            gap: 0.65rem;
+            font-size: 0.87rem;
+            color: var(--sp-white);
             transform: translateY(80px);
             opacity: 0;
             transition: var(--t);
@@ -736,39 +827,36 @@
         }
 
         #toast.show { transform:translateY(0); opacity:1; }
-        .toast-icon { color:#22c55e; font-size:1.15rem; }
+        .toast-icon { color:var(--sp-green); font-size:1.1rem; }
 
         /* ============================================================
            FOOTER
         ============================================================ */
         footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            padding: 2rem 0;
+            background: var(--sp-dark);
+            border-top: 1px solid var(--sp-border);
+            padding: 1.75rem 0;
             text-align: center;
         }
 
         footer p {
             font-family: var(--mono);
-            font-size: 0.8rem;
-            color: var(--text-muted);
+            font-size: 0.78rem;
+            color: var(--sp-muted);
         }
 
-        footer span { color: var(--accent); }
+        footer span { color: var(--sp-green); }
 
         /* ============================================================
            SCROLL REVEAL
         ============================================================ */
         .reveal {
             opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+            transform: translateY(24px);
+            transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
         }
 
-        .reveal.in {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.in { opacity:1; transform:translateY(0); }
 
         /* ============================================================
            RESPONSIVE
@@ -780,172 +868,36 @@
                 display: none;
                 position: fixed;
                 top: var(--nav-h);
-                left: 0; right: 0;
-                background: rgba(8,11,20,0.97);
-                backdrop-filter: blur(18px);
+                left:0; right:0;
+                background: rgba(18,18,18,0.97);
+                backdrop-filter: blur(20px);
                 flex-direction: column;
                 padding: 1.25rem;
-                gap: 0.15rem;
-                border-bottom: 1px solid var(--border);
+                gap: 0.1rem;
+                border-bottom: 1px solid var(--sp-border);
             }
 
             .nav-links.open { display:flex; }
-            .nav-links a { padding:0.7rem 1rem; font-size:0.95rem; }
+            .nav-links a { padding:0.7rem 1rem; font-size:0.95rem; border-radius:8px; }
             .nav-toggle { display:flex; }
 
             .about-grid,
             .contact-grid { grid-template-columns:1fr; gap:2.5rem; }
 
             .frow { grid-template-columns:1fr; }
-
             .projects-grid { grid-template-columns:1fr; }
-
             .h-cta { flex-direction:column; align-items:flex-start; }
-
             .skills-grid { grid-template-columns:1fr; }
-
             .stat-grid { grid-template-columns:1fr 1fr; }
+
+            .hero-contact { gap:1rem; }
+            .hero-contact-label { display:none; }
         }
 
         @media (max-width: 480px) {
-            .h-name { font-size:2.4rem; }
+            .h-name { font-size:2.5rem; }
             .stat-grid { grid-template-columns:1fr; }
-        }
-
-        /* ============================================================
-           SPOTIFY-THEMED PROJECTS SECTION
-        ============================================================ */
-        :root {
-            --sp-green:      #1DB954;
-            --sp-green-dim:  rgba(29,185,84,0.12);
-            --sp-green-glow: rgba(29,185,84,0.25);
-            --sp-dark:       #121212;
-            --sp-card:       #181818;
-            --sp-card-hover: #282828;
-        }
-
-        #projects {
-            background: var(--sp-dark);
-        }
-
-        /* Section label goes Spotify green */
-        #projects .section-label {
-            color: var(--sp-green);
-        }
-
-        /* Cards use Spotify palette */
-        #projects .pcard {
-            background: var(--sp-card);
-            border-color: transparent;
-            border-radius: 8px;
-        }
-
-        #projects .pcard:hover {
-            background: var(--sp-card-hover);
-            border-color: transparent;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-            transform: translateY(-6px);
-        }
-
-        /* Role line in Spotify green */
-        #projects .pcard-role {
-            color: var(--sp-green);
-        }
-
-        /* Accent left-bar on hover */
-        #projects .pcard::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 3px;
-            background: var(--sp-green);
-            border-radius: 8px 0 0 8px;
-            opacity: 0;
-            transition: var(--t);
-        }
-
-        #projects .pcard {
-            position: relative;
-        }
-
-        #projects .pcard:hover::before {
-            opacity: 1;
-        }
-
-        /* Badge colours — Spotify palette */
-        #projects .badge-win {
-            background: var(--sp-green);
-            color: #000;
-        }
-
-        #projects .badge-hack {
-            background: var(--sp-green-dim);
-            border: 1px solid rgba(29,185,84,0.35);
-            color: var(--sp-green);
-        }
-
-        #projects .badge-acad {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.12);
-            color: #b3b3b3;
-        }
-
-        /* Tech tags — Spotify subtle */
-        #projects .tech {
-            background: rgba(255,255,255,0.07);
-            border-color: rgba(255,255,255,0.1);
-            color: #b3b3b3;
-        }
-
-        /* GitHub link — Spotify outline */
-        #projects .plink {
-            color: #fff;
-            border-color: rgba(255,255,255,0.2);
-            background: transparent;
-        }
-
-        #projects .plink:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.35);
-        }
-
-        /* Live Site — Spotify green pill play button */
-        #projects .plink.live {
-            background: var(--sp-green);
-            color: #000;
-            border: none;
-            border-radius: 20px;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-        }
-
-        #projects .plink.live:hover {
-            background: #1ed760;
-            box-shadow: 0 4px 20px var(--sp-green-glow);
-            transform: scale(1.04) translateY(-1px);
-        }
-
-        /* Disabled link */
-        #projects .plink.off {
-            color: #535353;
-            border-color: rgba(255,255,255,0.06);
-        }
-
-        /* "Now Playing" dot animation on hovered card title */
-        #projects .pcard:hover .pcard-title::before {
-            content: '▶ ';
-            color: var(--sp-green);
-            font-size: 0.75em;
-        }
-
-        /* Section header sub-text */
-        #projects .section-sub {
-            color: #b3b3b3;
-        }
-
-        /* Divider line between body and footer of card */
-        #projects .pcard-foot {
-            border-top: 1px solid rgba(255,255,255,0.06);
+            .hero-contact-links { gap:0.85rem; }
         }
     </style>
 </head>
@@ -956,13 +908,23 @@
 ================================================================ -->
 <nav id="navbar">
     <div class="nav-inner">
-        <a href="#hero" class="nav-logo">&lt;<span>WM</span> /&gt;</a>
+        <!-- Spotify-style logo: green circle + initials -->
+        <a href="#hero" class="nav-logo">
+            <div class="nav-logo-icon">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.371-.721.49-1.101.241-3.021-1.858-6.832-2.278-11.322-1.237-.422.1-.851-.16-.95-.581-.1-.422.16-.851.581-.95 4.911-1.12 9.122-.641 12.512 1.43.38.241.49.721.28 1.097zm1.47-3.27c-.301.461-.932.601-1.392.3-3.462-2.13-8.732-2.75-12.822-1.5-.521.15-1.062-.15-1.212-.671-.15-.521.15-1.062.671-1.212 4.681-1.42 10.502-.73 14.472 1.71.45.301.601.932.283 1.373zm.126-3.39c-4.141-2.46-10.983-2.69-14.942-1.49-.631.19-1.292-.17-1.482-.8-.19-.631.17-1.292.8-1.482 4.561-1.38 12.142-1.11 16.942 1.73.57.34.761 1.07.421 1.64-.339.57-1.07.761-1.739.402z"/>
+                </svg>
+            </div>
+            <span>WM</span>
+        </a>
+
         <ul class="nav-links" id="navLinks">
             <li><a href="#about"    class="nav-item">About</a></li>
             <li><a href="#skills"   class="nav-item">Skills</a></li>
             <li><a href="#projects" class="nav-item">Projects</a></li>
             <li><a href="#contact"  class="nav-item nav-hire">Hire Me</a></li>
         </ul>
+
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
@@ -987,8 +949,7 @@
         </div>
 
         <div class="h-loc">
-            <!-- Location pin icon -->
-            <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
             </svg>
             Johannesburg, South Africa
@@ -1002,20 +963,59 @@
 
         <div class="h-cta">
             <a href="#projects" class="btn btn-primary">
-                <!-- Code icon -->
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
                 </svg>
                 View My Work
             </a>
             <a href="#contact" class="btn btn-outline">
-                <!-- Mail icon -->
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 20 20">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                 </svg>
                 Get In Touch
             </a>
+        </div>
+
+        <!-- ── Social links & contact visible on page 1 ── -->
+        <div class="hero-contact">
+            <span class="hero-contact-label">Connect</span>
+
+            <div class="hero-socials">
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/washie/" target="_blank" rel="noopener" class="h-slink" aria-label="LinkedIn">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/theboyDC" target="_blank" rel="noopener" class="h-slink" aria-label="GitHub">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com/washienowashie/" target="_blank" rel="noopener" class="h-slink" aria-label="Instagram">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="hero-contact-links">
+                <a href="mailto:washiembeleki2003@gmail.com" class="h-clink">
+                    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    washiembeleki2003@gmail.com
+                </a>
+                <a href="tel:0844869910" class="h-clink">
+                    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    084 486 9910
+                </a>
+            </div>
         </div>
     </div>
 
@@ -1037,7 +1037,6 @@
         </div>
 
         <div class="about-grid">
-            <!-- Left: text + stats -->
             <div class="about-text reveal">
                 <p>
                     I'm <strong>Washington Mbeleki</strong>, a Software Engineering student at
@@ -1055,7 +1054,8 @@
                     I thrive under pressure and in collaboration. At the e-Gov Hackathon,
                     our team shipped a full product in record time and <strong>placed 3rd nationally</strong>.
                     I led both the Code Clinics and Robot World projects at WeThinkCode_ — I'm
-                    looking for a junior role where I can keep shipping and keep growing.
+                    looking for a junior role, internship, or collaboration where I can keep
+                    shipping and keep growing.
                 </p>
 
                 <div class="stat-grid">
@@ -1078,14 +1078,13 @@
                 </div>
             </div>
 
-            <!-- Right: Python snippet -->
             <div class="reveal">
                 <div class="code-card">
                     <div class="code-titlebar">
                         <div class="dot dot-r"></div>
                         <div class="dot dot-y"></div>
                         <div class="dot dot-g"></div>
-                        <span class="code-fname">washie.py</span>
+                        <span class="code-fname">washington.py</span>
                     </div>
                     <div class="code-body">
                         <span class="cm"># A snapshot of who I am</span><br>
@@ -1101,7 +1100,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">goal</span>(<span class="slf">self</span>):<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> {<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="st">"mission"</span>: <span class="st">"Build tech that matters"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="st">"next_step"</span>: <span class="st">"Land a junior role 🚀"</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="st">"next"</span>: <span class="st">"Land a junior role 🚀"</span><br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
                         <br>
                         me = <span class="fn">Developer</span>()<br>
@@ -1122,12 +1121,11 @@
         <div class="section-header reveal">
             <p class="section-label">02 / Skills</p>
             <h2 class="section-title">My Tech Stack</h2>
-            <p class="section-sub">A breakdown of the tools and concepts I work with — and actively keep sharpening.</p>
+            <p class="section-sub">The tools and concepts I work with — and actively keep sharpening.</p>
         </div>
 
         <div class="skills-grid">
 
-            <!-- Python -->
             <div class="skill-card reveal">
                 <div class="skill-icon">🐍</div>
                 <div class="skill-title">Python</div>
@@ -1149,7 +1147,6 @@
                 </div>
             </div>
 
-            <!-- Web Frontend -->
             <div class="skill-card reveal">
                 <div class="skill-icon">🌐</div>
                 <div class="skill-title">Web Frontend</div>
@@ -1161,12 +1158,10 @@
                     <span class="tag">Responsive Design</span>
                     <span class="tag">Bootstrap</span>
                     <span class="tag">DOM Manipulation</span>
-                    <span class="tag">REST API Integration</span>
                     <span class="tag">Fetch API</span>
                 </div>
             </div>
 
-            <!-- Java -->
             <div class="skill-card reveal">
                 <div class="skill-icon">☕</div>
                 <div class="skill-title">Java</div>
@@ -1180,7 +1175,6 @@
                 </div>
             </div>
 
-            <!-- Core Competencies -->
             <div class="skill-card reveal">
                 <div class="skill-icon">⚙️</div>
                 <div class="skill-title">Core Competencies</div>
@@ -1213,7 +1207,7 @@
 
         <div class="projects-grid">
 
-            <!-- ─── Thuso Health ────────────────────────────────────── -->
+            <!-- ─── Thuso Health ─── -->
             <div class="pcard reveal">
                 <div class="pcard-head">
                     <div class="badges">
@@ -1226,7 +1220,7 @@
                 <div class="pcard-body">
                     <div class="psec">
                         <p class="psec-label">⚡ The Problem</p>
-                        <p>During load-shedding, patients across South Africa can't easily find nearby clinics that are <strong>solar-powered and not overcrowded</strong> — leading to wasted travel and delayed care.</p>
+                        <p>During load-shedding, patients across South Africa can't find nearby clinics that are <strong>solar-powered and not overcrowded</strong> — leading to wasted travel and delayed care.</p>
                     </div>
                     <div class="psec">
                         <p class="psec-label">✅ The Solution</p>
@@ -1244,25 +1238,18 @@
                     </div>
                     <div class="plinks">
                         <a href="https://github.com/peekay11/thuso-health" target="_blank" rel="noopener" class="plink">
-                            <!-- GitHub icon -->
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                            </svg>
+                            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                             GitHub
                         </a>
                         <a href="https://thuso-health.pages.dev/" target="_blank" rel="noopener" class="plink live">
-                            <!-- External link icon -->
-                            <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
-                            </svg>
+                            <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>
                             Live Site
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- ─── Code Clinics ──────────────────────────────────────── -->
+            <!-- ─── Code Clinics ─── -->
             <div class="pcard reveal">
                 <div class="pcard-head">
                     <div class="badges">
@@ -1290,9 +1277,7 @@
                     </div>
                     <div class="plinks">
                         <a href="https://github.com/theboyDC" target="_blank" rel="noopener" class="plink">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                            </svg>
+                            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                             GitHub
                         </a>
                         <span class="plink off">No Live Demo</span>
@@ -1300,14 +1285,14 @@
                 </div>
             </div>
 
-            <!-- ─── Robot World ───────────────────────────────────────── -->
+            <!-- ─── Robot World ─── -->
             <div class="pcard reveal">
                 <div class="pcard-head">
                     <div class="badges">
                         <span class="badge badge-acad">Academic Project</span>
                     </div>
                     <h3 class="pcard-title">Robot World</h3>
-                    <p class="pcard-role">Lead Developer · Group Project</p>
+                    <p class="pcard-role">Lead Developer · Team: The Transformers</p>
                 </div>
                 <div class="pcard-body">
                     <div class="psec">
@@ -1316,7 +1301,7 @@
                     </div>
                     <div class="psec">
                         <p class="psec-label">✅ The Solution</p>
-                        <p>An interactive grid-based simulation built in <strong>Java using OOP principles</strong>, letting users program a robot's path and actions via CLI — demonstrating real-world class design and encapsulation.</p>
+                        <p>An interactive grid-based simulation built in <strong>Java using OOP principles</strong> — letting users program a robot's path and actions via CLI, demonstrating real-world class design and encapsulation.</p>
                     </div>
                 </div>
                 <div class="pcard-foot">
@@ -1329,9 +1314,7 @@
                     </div>
                     <div class="plinks">
                         <a href="https://github.com/theboyDC" target="_blank" rel="noopener" class="plink">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                            </svg>
+                            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                             GitHub
                         </a>
                         <span class="plink off">No Live Demo</span>
@@ -1357,19 +1340,18 @@
 
         <div class="contact-grid">
 
-            <!-- Left: Info + socials -->
             <div class="contact-lhs reveal">
                 <h3>Get In Touch</h3>
                 <p>
                     Whether you're a recruiter, a fellow developer, or someone with an
                     interesting problem to solve — I'd love to hear from you.
-                    I'm currently <strong style="color:#22c55e;">open to junior roles, internships &amp; collaborations</strong>.
+                    I'm currently <strong style="color:var(--sp-green);">open to junior roles, internships &amp; collaborations</strong>.
                 </p>
 
                 <div class="cdetails">
                     <div class="cdetail">
                         <div class="cdetail-icon">
-                            <svg width="15" height="15" fill="none" stroke="#00d4ff" stroke-width="2" viewBox="0 0 24 24">
+                            <svg width="14" height="14" fill="none" stroke="#1DB954" stroke-width="2" viewBox="0 0 24 24">
                                 <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
                         </div>
@@ -1377,7 +1359,7 @@
                     </div>
                     <div class="cdetail">
                         <div class="cdetail-icon">
-                            <svg width="15" height="15" fill="none" stroke="#00d4ff" stroke-width="2" viewBox="0 0 24 24">
+                            <svg width="14" height="14" fill="none" stroke="#1DB954" stroke-width="2" viewBox="0 0 24 24">
                                 <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
                         </div>
@@ -1385,7 +1367,7 @@
                     </div>
                     <div class="cdetail">
                         <div class="cdetail-icon">
-                            <svg width="15" height="15" fill="none" stroke="#00d4ff" stroke-width="2" viewBox="0 0 24 24">
+                            <svg width="14" height="14" fill="none" stroke="#1DB954" stroke-width="2" viewBox="0 0 24 24">
                                 <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                 <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
@@ -1395,28 +1377,18 @@
                 </div>
 
                 <div class="socials">
-                    <!-- LinkedIn -->
                     <a href="https://linkedin.com/in/washie/" target="_blank" rel="noopener" class="slink" aria-label="LinkedIn">
-                        <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     </a>
-                    <!-- GitHub -->
                     <a href="https://github.com/theboyDC" target="_blank" rel="noopener" class="slink" aria-label="GitHub">
-                        <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                        </svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                     </a>
-                    <!-- Instagram -->
                     <a href="https://instagram.com/washienowashie/" target="_blank" rel="noopener" class="slink" aria-label="Instagram">
-                        <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                        </svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                     </a>
                 </div>
             </div>
 
-            <!-- Right: Form -->
             <div class="cform reveal">
                 <form id="contactForm" novalidate>
                     <div class="frow">
@@ -1438,7 +1410,7 @@
                         <textarea class="ftextarea" id="fmessage" name="message" placeholder="Tell me about the role, project, or just say hi..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary fbtn" id="submitBtn">
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 20 20">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
                         </svg>
                         Send Message
@@ -1460,13 +1432,11 @@
     </div>
 </footer>
 
-
-<!-- Toast notification -->
 <div id="toast">
     <span class="toast-icon">✓</span>
     <div>
         <strong>Message sent!</strong><br>
-        <small style="color:var(--text-muted)">I'll get back to you soon.</small>
+        <small style="color:var(--sp-muted)">I'll get back to you soon.</small>
     </div>
 </div>
 
@@ -1475,7 +1445,7 @@
      JAVASCRIPT
 ================================================================ -->
 <script>
-    /* ─── Navbar: glass effect + active link ─── */
+    /* ─── Navbar ─── */
     const navbar   = document.getElementById('navbar');
     const navItems = document.querySelectorAll('.nav-item');
     const sections = document.querySelectorAll('section[id]');
@@ -1485,7 +1455,7 @@
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 20);
         setActiveNav();
-    }, { passive: true });
+    }, { passive:true });
 
     function setActiveNav() {
         let current = '';
@@ -1507,7 +1477,7 @@
         navLinks.classList.remove('open');
     }));
 
-    /* ─── Typing animation (hero) ─── */
+    /* ─── Typing animation ─── */
     const phrases = [
         'Software Engineering Student',
         'Backend Python Developer',
@@ -1520,49 +1490,43 @@
 
     function tick() {
         const word = phrases[pIdx];
-        typedEl.textContent = deleting
-            ? word.slice(0, --cIdx)
-            : word.slice(0, ++cIdx);
+        typedEl.textContent = deleting ? word.slice(0, --cIdx) : word.slice(0, ++cIdx);
 
         let delay = deleting ? 48 : 88;
 
         if (!deleting && cIdx === word.length) {
-            delay = 2000;
-            deleting = true;
+            delay = 2000; deleting = true;
         } else if (deleting && cIdx === 0) {
             deleting = false;
             pIdx = (pIdx + 1) % phrases.length;
             delay = 400;
         }
-
         setTimeout(tick, delay);
     }
 
     setTimeout(tick, 1300);
 
-    /* ─── Scroll-reveal (Intersection Observer) ─── */
+    /* ─── Scroll-reveal ─── */
     const reveals = document.querySelectorAll('.reveal');
-    const revealObs = new IntersectionObserver((entries) => {
+    const obs = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
-            // Stagger children in the same grid
             const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
             const idx = siblings.indexOf(entry.target);
             setTimeout(() => entry.target.classList.add('in'), idx * 90);
-            revealObs.unobserve(entry.target);
+            obs.unobserve(entry.target);
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold:0.1, rootMargin:'0px 0px -50px 0px' });
 
-    reveals.forEach(el => revealObs.observe(el));
+    reveals.forEach(el => obs.observe(el));
 
-    /* ─── Contact form (simulated submission) ─── */
+    /* ─── Contact form ─── */
     const form      = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const toast     = document.getElementById('toast');
 
     form.addEventListener('submit', e => {
         e.preventDefault();
-
         const name    = form.name.value.trim();
         const email   = form.email.value.trim();
         const message = form.message.value.trim();
@@ -1573,41 +1537,25 @@
             return;
         }
 
-        /* Disable button and show loading state */
         submitBtn.disabled = true;
         submitBtn.innerHTML = `<span style="display:inline-block;animation:spin 0.9s linear infinite">⟳</span>&nbsp;Sending...`;
 
-        /*
-         * Replace the setTimeout below with a real form service.
-         * Options: Formspree (formspree.io), EmailJS, or Netlify Forms.
-         * Example Formspree: fetch('https://formspree.io/f/YOUR_ID', {
-         *   method:'POST', body: new FormData(form)
-         * })
-         */
+        /* Swap setTimeout for a real service (e.g. Formspree) when ready */
         setTimeout(() => {
             submitBtn.innerHTML = '✓ Sent!';
             form.reset();
-
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 4500);
-
             setTimeout(() => {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = `<svg width="15" height="15" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Send Message`;
+                submitBtn.innerHTML = `<svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Send Message`;
             }, 3000);
         }, 1800);
     });
 
-    /* ─── Extra keyframe styles injected at runtime ─── */
     document.head.insertAdjacentHTML('beforeend', `<style>
-        @keyframes shake {
-            0%,100% { transform:translateX(0); }
-            25%      { transform:translateX(-8px); }
-            75%      { transform:translateX(8px); }
-        }
-        @keyframes spin {
-            to { transform:rotate(360deg); }
-        }
+        @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-8px)} 75%{transform:translateX(8px)} }
+        @keyframes spin  { to { transform:rotate(360deg); } }
     </style>`);
 </script>
 
