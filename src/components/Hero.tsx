@@ -7,8 +7,7 @@ export default function Hero() {
           <p className="kicker">Software Engineering student — Johannesburg, ZA</p>
           <h1 className="headline">Building systems that move data and hold state correctly.</h1>
           <p className="hero-desc">
-            I'm a second-year Diploma student at WeThinkCode_, working across ETL pipelines,
-            backend services, and mobile apps — and tutoring other students along the way.
+            I build data pipelines, backend systems, and mobile apps as a second-year Software Engineering student at WeThinkCode_ — and spend part of each week helping other students do the same."
           </p>
           <div className="hero-links">
             <a className="btn primary" href="mailto:washiembeleki2003@gmail.com">
