@@ -132,7 +132,7 @@ function WorkCard({ p }: { p: Project }) {
 function WorkFeature({ p }: { p: Project }) {
   return (
     <div className="work-feature">
-      <span className="cover-tag">Featured</span>
+  
       <div className="work-feature-media">
         <Thumb kind={p.thumb} />
       </div>

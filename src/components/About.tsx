@@ -32,7 +32,7 @@ export default function About() {
             </div>
           </div>
           <div className="feature-stat">
-            <span className="cover-tag">Headline</span>
+    
             <p className="feature-num">{featured.num}</p>
             <p className="feature-cap">{featured.cap}</p>
           </div>

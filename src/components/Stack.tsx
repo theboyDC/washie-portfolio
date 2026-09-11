@@ -12,7 +12,7 @@ export default function Stack() {
           <span className="section-rule" />
         </div>
         <div className="stack-feature">
-          <span className="cover-tag">Core</span>
+        
           <div className="stack-label">{featured.label}</div>
           <div className="stack-items">
             {featured.items.map((item) => (
