@@ -14,7 +14,7 @@ export default function Experience() {
           {experience.map((e) => (
             <div className="tl-item" key={e.role}>
               <p className="tl-role">{e.role}</p>
-              <p className="tl-meta">{e.meta}</p>
+              <span className="tl-meta tag-chip">{e.meta}</span>
               <ul className="tl-desc">
                 {e.points.map((pt) => (
                   <li key={pt}>{pt}</li>

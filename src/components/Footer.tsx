@@ -2,6 +2,7 @@ export default function Footer() {
   return (
     <footer id="contact">
       <div className="wrap">
+        <span className="tag-chip">Open to work</span>
         <p className="contact-title">Let's talk</p>
         <p className="contact-desc">
           Looking for a graduate role, internship, or a project collaborator — email is the fastest

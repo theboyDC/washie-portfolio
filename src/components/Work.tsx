@@ -83,65 +83,88 @@ function Thumb({ kind }: { kind: Project["thumb"] }) {
   );
 }
 
-function WorkRow({ p }: { p: Project }) {
-  const meta = (
-    <>
-      <span className="work-idx">{p.idx}</span>
-      <span className="work-main">
-        <p className="work-title">{p.title}</p>
-        <p className="work-desc">{p.desc}</p>
-        <p className="work-tags">{p.tags}</p>
-      </span>
-      <span className="work-thumb">
-        <Thumb kind={p.thumb} />
-      </span>
-    </>
-  );
-
+function WorkLinks({ p }: { p: Project }) {
   if (p.href && p.githubHref) {
     return (
-      <div className="work-row work-row--static">
-        {meta}
-        <span className="work-links">
-          <a href={p.href} target="_blank" rel="noopener noreferrer">
-            {p.status} →
-          </a>
-          <a href={p.githubHref} target="_blank" rel="noopener noreferrer">
-            GitHub →
-          </a>
-        </span>
-      </div>
+      <span className="work-card-links">
+        <a href={p.href} target="_blank" rel="noopener noreferrer">
+          {p.status} →
+        </a>
+        <a href={p.githubHref} target="_blank" rel="noopener noreferrer">
+          GitHub →
+        </a>
+      </span>
     );
   }
-
   if (p.href) {
     return (
-      <a className="work-row" href={p.href} target="_blank" rel="noopener noreferrer">
-        {meta}
-        <span className="work-arrow">{`${p.status} →`}</span>
-      </a>
+      <span className="work-card-links">
+        <a href={p.href} target="_blank" rel="noopener noreferrer">
+          {p.status} →
+        </a>
+      </span>
     );
   }
+  return <span className="work-card-status">{p.status}</span>;
+}
+
+function WorkCard({ p }: { p: Project }) {
   return (
-    <div className="work-row work-row--static" aria-disabled="true">
-      {meta}
-      <span className="work-arrow">{p.status}</span>
+    <div className="work-card">
+      <div className="work-card-thumb">
+        <Thumb kind={p.thumb} />
+      </div>
+      <div className="work-card-body">
+        <div className="work-card-head">
+          <span className="work-idx">{p.idx}</span>
+          <p className="work-title">{p.title}</p>
+        </div>
+        <p className="work-desc">{p.desc}</p>
+        <p className="work-tags">{p.tags}</p>
+        <div className="work-card-foot">
+          <WorkLinks p={p} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function WorkFeature({ p }: { p: Project }) {
+  return (
+    <div className="work-feature">
+      <span className="cover-tag">Featured</span>
+      <div className="work-feature-media">
+        <Thumb kind={p.thumb} />
+      </div>
+      <div className="work-feature-body">
+        <div className="work-card-head">
+          <span className="work-idx">{p.idx}</span>
+          <h3 className="work-feature-title">{p.title}</h3>
+        </div>
+        <p className="work-feature-desc">{p.desc}</p>
+        <p className="work-tags">{p.tags}</p>
+        <div className="work-card-foot">
+          <WorkLinks p={p} />
+        </div>
+      </div>
     </div>
   );
 }
 
 export default function Work() {
+  const [featured, ...rest] = projects;
   return (
     <section id="work">
       <div className="wrap">
         <div className="section-head">
-          <span className="section-num">(02)</span>
+          <span className="section-num">(01)</span>
           <h2 className="section-title">Selected work</h2>
           <span className="section-rule" />
         </div>
-        <div className="work-list">
-          {projects.map((p) => (
-            <WorkRow p={p} key={p.idx} />
+        <WorkFeature p={featured} />
+        <div className="work-grid">
+          {rest.map((p) => (
+            <WorkCard p={p} key={p.idx} />
           ))}
         </div>
       </div>

@@ -28,10 +28,19 @@ export default function Hero() {
               LinkedIn
             </a>
           </div>
-          <p className="scroll-cue">Scroll ↓</p>
+          <a className="scroll-cue" href="#work" aria-label="Scroll to selected work">
+            <svg className="scroll-mouse" viewBox="0 0 22 34" fill="none" aria-hidden="true">
+              <rect x="1.5" y="1.5" width="19" height="31" rx="9.5" stroke="currentColor" strokeWidth="2" />
+              <circle className="scroll-wheel" cx="11" cy="10" r="2.4" fill="currentColor" />
+            </svg>
+            <span>Scroll</span>
+          </a>
         </div>
-        <div className="hero-photo">
-          <img src="/washie-portrait.jpg" alt="Washington Mbeleki" />
+        <div className="hero-photo-col">
+          <span className="cover-tag">No. 01</span>
+          <div className="hero-photo">
+            <img src="/washie-portrait.jpg" alt="Washington Mbeleki" />
+          </div>
         </div>
       </div>
     </section>

@@ -8,10 +8,10 @@ export default function Nav() {
         </a>
         <ul className="nav-links">
           <li>
-            <a href="#about">About</a>
+            <a href="#work">Work</a>
           </li>
           <li>
-            <a href="#work">Work</a>
+            <a href="#about">About</a>
           </li>
           <li>
             <a href="#stack">Stack</a>
