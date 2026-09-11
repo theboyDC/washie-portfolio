@@ -5,43 +5,60 @@ export interface Project {
   tags: string;
   status: string;
   href?: string;
-  thumb: "pipeline" | "grid" | "calendar" | "mobile";
+  thumb: "pipeline" | "grid" | "calendar" | "mobile" | "web" | "robot";
 }
 
 export const projects: Project[] = [
   {
     idx: "01",
-    title: "Weather ETL Pipeline",
-    desc: "Extracts, cleans, and loads hourly weather data into a normalized PostgreSQL database.",
-    tags: "Python · pandas · PostgreSQL · Docker",
-    status: "View",
-    href: "https://github.com/theboyDC/lead_pipeline",
-    thumb: "pipeline",
+    title: "MoCredit",
+    desc: "AI-powered credit scoring & micro-lending mini app on the MTN MoMo Open API platform — 2nd place, 2026 MTN MoMo FinTech Hackathon. Flutter frontend, Node.js/Hono backend on Cloudflare Workers, live MoMo Collections & Disbursements APIs, plus an n8n-orchestrated AI coaching agent.",
+    tags: "Flutter (Dart) · Node.js · Hono · Cloudflare Workers/D1/KV · MTN MoMo APIs · n8n",
+    status: "Live",
+    href: "https://momo-credit-app.pages.dev",
+    thumb: "mobile",
   },
   {
     idx: "02",
-    title: "Robot World",
-    desc: "Multiplayer client-server game — robots on a shared grid, synced over TCP sockets.",
-    tags: "Java · Maven · TCP Sockets · JUnit 5 — WeThinkCode_ GitLab (private)",
-    status: "Private",
+    title: "Thuso Health",
+    desc: "Offline-first digital health passport & smart clinic finder for the Digital Pulse G13 Health Challenge (Gauteng Dept. of Health) — Top 3 at the G13 Hackathon. QR-code identification, one-time-PIN practitioner access, one-tap PDF export, and clinic recommendations combining travel-time, queue congestion, and load-shedding data.",
+    tags: "JavaScript · Hono · Cloudflare Workers/D1/R2 · JWT · Leaflet · OSRM · jsPDF · QRCode.js",
+    status: "View",
+    href: "https://github.com/peekay11/thuso-health",
     thumb: "grid",
   },
   {
     idx: "03",
-    title: "Google Calendar Clinic System",
-    desc: "CLI booking tool syncing volunteer time slots and student bookings to Google Calendar.",
-    tags: "Python · Google Calendar API · Click · Rich — WeThinkCode_ GitLab (private)",
-    status: "Private",
-    thumb: "calendar",
+    title: "Thukela Technologies Website",
+    desc: "Client-facing single-page site — helped shape the visual design and interactive UI, including an orbital hero visualization, cursor-repel physics, and elastic-collision animated components. Centralized all site content into a single maintainable data module.",
+    tags: "React · TypeScript · Vite · Framer Motion · Lucide React",
+    status: "Live",
+    href: "https://thukela-technologies.vercel.app",
+    thumb: "web",
   },
   {
     idx: "04",
-    title: "Thukela Technologies App",
-    desc: "Mobile application built for Thukela Technologies.",
-    tags: "React Native · TypeScript · Vite",
-    status: "Live",
-    href: "https://thukela-technologies.vercel.app",
-    thumb: "mobile",
+    title: "TSUMO Network Backend Architecture",
+    desc: "Scalable backend services supporting media streaming workflows and automated revenue allocation split calculations, with structured RESTful API endpoints connecting application interfaces to persistent storage layers.",
+    tags: "Python · RESTful APIs · Microservices",
+    status: "Private",
+    thumb: "pipeline",
+  },
+  {
+    idx: "05",
+    title: "Robot World Simulation Platform",
+    desc: "Java-based multiplayer robot world simulation built with Maven — WeThinkCode_ coursework. Refactored core simulation logic against CodeScene Bumpy Road complexity warnings, with a Swing GUI client visualizing robot movement.",
+    tags: "Java · Maven · JUnit 5 · Swing · Socket & Network Programming · TDD — WeThinkCode_ (private)",
+    status: "Private",
+    thumb: "robot",
+  },
+  {
+    idx: "06",
+    title: "Code Clinic Booking System",
+    desc: "Booking system for scheduling and managing code clinic sessions — WeThinkCode_ course project.",
+    tags: "Python · Flask · SQLite — WeThinkCode_ (private)",
+    status: "Private",
+    thumb: "calendar",
   },
 ];
 
@@ -51,30 +68,37 @@ export interface StackGroup {
 }
 
 export const stack: StackGroup[] = [
-  { label: "Languages", items: ["Python", "Java", "TypeScript", "SQL"] },
+  { label: "Languages", items: ["Python", "Java", "SQL", "JavaScript", "TypeScript", "HTML/CSS", "Bash/Shell"] },
   {
-    label: "Data & Databases",
-    items: ["PostgreSQL", "pandas", "Relational DB Design", "ETL Pipelines"],
+    label: "Backend & Web Development",
+    items: [
+      "RESTful APIs",
+      "Microservices",
+      "Socket & Network Programming",
+      "Flask",
+      "Node.js",
+      "Hono",
+      "Next.js",
+      "React",
+      "React Bootstrap",
+      "Vite",
+      "Flutter (Dart)",
+      "Cloudflare Workers",
+      "JWT Authentication",
+      "UI/UX Design",
+    ],
   },
   {
-    label: "Frameworks & Libraries",
-    items: ["React Native", "Vite", "Maven", "JUnit 5", "Click", "Rich", "Gson"],
+    label: "Data Engineering",
+    items: ["ETL Pipelines", "SQLite", "Cloudflare D1", "Cloudflare KV"],
+  },
+  {
+    label: "Testing & Practices",
+    items: ["Test-Driven Development (TDD)", "JUnit 5", "Object-Oriented Design (OOD)", "Agile"],
   },
   {
     label: "Tools & Platforms",
-    items: ["Git", "GitHub", "GitLab", "Docker", "Docker Compose", "Linux / Ubuntu", "IntelliJ IDEA"],
-  },
-  {
-    label: "Concepts",
-    items: [
-      "REST & OAuth2 APIs",
-      "TCP Sockets",
-      "Client-Server Architecture",
-      "Multithreading",
-      "JSON Protocol Design",
-      "OOP",
-      "Unit Testing",
-    ],
+    items: ["Git", "GitHub", "GitLab CI/CD", "Linux (Ubuntu)", "Docker", "Maven", "n8n", "Generative AI Tools"],
   },
 ];
 
@@ -86,19 +110,12 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Bootcamp Assistant",
-    meta: "WeThinkCode_ · Jul 2026 – Present",
-    points: [
-      "Assist facilitators in running coding bootcamp sessions, supporting participants through hands-on exercises and troubleshooting",
-      "Help onboard new learners to programming fundamentals and the bootcamp's tools and workflow",
-    ],
-  },
-  {
-    role: "Peer Tutor",
+    role: "Peer Tutor & Bootcamp Assistant",
     meta: "WeThinkCode_ · Oct 2025 – Present",
     points: [
-      "Support fellow students by explaining programming concepts, debugging code, and reinforcing problem-solving techniques",
-      "Contribute to WeThinkCode_'s peer-driven, project-based learning environment",
+      "Facilitate hands-on technical sessions covering Python fundamentals, Java object-oriented design, and Git workflow best practices for incoming student cohorts",
+      "Conduct structured code reviews, assist students with systems debugging, and enforce test-driven development principles",
+      "Assist campus facilitators with organizing logistics and running technical bootcamp orientation cycles",
     ],
   },
 ];
@@ -109,9 +126,9 @@ export interface Cert {
 }
 
 export const certs: Cert[] = [
-  { name: "GenAI Course for Software Engineers", meta: "WeThinkCode_ · Mar 2026" },
+  { name: "Generative AI for Software Engineering", meta: "WeThinkCode_" },
   { name: "Data Engineering Basics for Everyone", meta: "edX · Aug 2026" },
-  { name: "Relational Database Management Systems", meta: "IBM · Sep 2026" },
+  { name: "Relational Database Management Systems", meta: "Sep 2026" },
 ];
 
 export interface RecordStat {
@@ -120,8 +137,8 @@ export interface RecordStat {
 }
 
 export const record: RecordStat[] = [
-  { num: "2nd Year", cap: "Diploma in Software Engineering, WeThinkCode_" },
-  { num: "4+", cap: "Projects shipped across data, backend & mobile" },
-  { num: "3+", cap: "Certifications completed in 2026" },
-  { num: "11+ months", cap: "Peer tutoring fellow students at WeThinkCode_" },
+  { num: "Final-year", cap: "Diploma in Software Engineering & Data Engineering, WeThinkCode_" },
+  { num: "2nd Place", cap: "2026 MTN MoMo FinTech Hackathon — MoCredit" },
+  { num: "Top 3", cap: "Digital Pulse G13 Health Hackathon — Thuso Health" },
+  { num: "11+ months", cap: "Peer tutoring & bootcamp assisting at WeThinkCode_" },
 ];

@@ -10,11 +10,12 @@ export default function About() {
           <span className="section-rule" />
         </div>
         <p className="section-intro">
-          I work at the layer just underneath the interface — pulling and cleaning data, designing
-          schemas, and keeping a server correct when multiple clients hit it at once. Most of what's
-          here started as a WeThinkCode_ exercise or a personal build, then turned into something I
-          kept iterating on. Alongside that, I tutor fellow students, which keeps me honest about
-          actually understanding the fundamentals rather than just getting things to run.
+          I work at the layer just underneath the interface — designing backend architectures, wiring up
+          RESTful APIs, and keeping data correct across mobile, web, and server. Some of what's here started
+          as a WeThinkCode_ exercise; some came out of hackathon weekends building for real organizations —
+          a credit-scoring app on the MTN MoMo platform, a digital health passport for the Gauteng Department
+          of Health. Alongside that, I tutor fellow students, which keeps me honest about actually
+          understanding the fundamentals rather than just getting things to run.
         </p>
 
         <p className="record-label">The record</p>

@@ -4,10 +4,13 @@ export default function Hero() {
       <div className="hero-grid" />
       <div className="wrap hero-inner">
         <div className="hero-text">
-          <p className="kicker">Software Engineering student — Johannesburg, ZA</p>
+          <p className="kicker">Software Engineer &amp; Data Engineer — Johannesburg, ZA</p>
           <h1 className="headline">Building systems that move data and hold state correctly.</h1>
           <p className="hero-desc">
-            I build data pipelines, backend systems, and mobile apps as a second-year Software Engineering student at WeThinkCode_ — and spend part of each week helping other students do the same."
+            I'm a final-year Software Engineering and Data Engineering student at WeThinkCode_, building
+            backend systems, data pipelines, and mobile apps — including a hackathon-winning fintech app and
+            a health-tech platform for the Gauteng Department of Health. I also tutor incoming student cohorts
+            as a Peer Tutor and Bootcamp Assistant.
           </p>
           <div className="hero-links">
             <a className="btn primary" href="mailto:washiembeleki2003@gmail.com">

@@ -43,14 +43,42 @@ function Thumb({ kind }: { kind: Project["thumb"] }) {
       </svg>
     );
   }
+  if (kind === "mobile") {
+    return (
+      <svg viewBox="0 0 130 70" preserveAspectRatio="none">
+        <rect width="130" height="70" fill="#F0F0F0" />
+        <rect x="48" y="6" width="34" height="58" rx="5" fill="none" stroke="#0A0A0A" strokeWidth="1.5" />
+        <line x1="55" y1="16" x2="75" y2="16" stroke="#0A0A0A" strokeWidth="2" />
+        <line x1="55" y1="26" x2="75" y2="26" stroke="#D6D6D6" strokeWidth="2" />
+        <line x1="55" y1="34" x2="68" y2="34" stroke="#D6D6D6" strokeWidth="2" />
+        <circle cx="65" cy="56" r="3" fill="#0A0A0A" />
+      </svg>
+    );
+  }
+  if (kind === "web") {
+    return (
+      <svg viewBox="0 0 130 70" preserveAspectRatio="none">
+        <rect width="130" height="70" fill="#F0F0F0" />
+        <rect x="10" y="10" width="110" height="50" rx="2" fill="none" stroke="#0A0A0A" strokeWidth="1.5" />
+        <line x1="10" y1="20" x2="120" y2="20" stroke="#0A0A0A" strokeWidth="1.5" />
+        <circle cx="17" cy="15" r="1.6" fill="#0A0A0A" />
+        <circle cx="23" cy="15" r="1.6" fill="#8C8C8C" />
+        <circle cx="29" cy="15" r="1.6" fill="#D6D6D6" />
+        <circle cx="65" cy="42" r="12" fill="none" stroke="#0A0A0A" strokeWidth="1.5" />
+        <circle cx="65" cy="42" r="4" fill="#0A0A0A" />
+      </svg>
+    );
+  }
   return (
     <svg viewBox="0 0 130 70" preserveAspectRatio="none">
       <rect width="130" height="70" fill="#F0F0F0" />
-      <rect x="48" y="6" width="34" height="58" rx="5" fill="none" stroke="#0A0A0A" strokeWidth="1.5" />
-      <line x1="55" y1="16" x2="75" y2="16" stroke="#0A0A0A" strokeWidth="2" />
-      <line x1="55" y1="26" x2="75" y2="26" stroke="#D6D6D6" strokeWidth="2" />
-      <line x1="55" y1="34" x2="68" y2="34" stroke="#D6D6D6" strokeWidth="2" />
-      <circle cx="65" cy="56" r="3" fill="#0A0A0A" />
+      <rect x="45" y="18" width="40" height="34" rx="3" fill="none" stroke="#0A0A0A" strokeWidth="1.5" />
+      <circle cx="55" cy="30" r="3" fill="#0A0A0A" />
+      <circle cx="75" cy="30" r="3" fill="#0A0A0A" />
+      <line x1="65" y1="8" x2="65" y2="18" stroke="#0A0A0A" strokeWidth="1.5" />
+      <circle cx="65" cy="6" r="2.5" fill="#8C8C8C" />
+      <line x1="45" y1="60" x2="35" y2="66" stroke="#0A0A0A" strokeWidth="1.5" />
+      <line x1="85" y1="60" x2="95" y2="66" stroke="#0A0A0A" strokeWidth="1.5" />
     </svg>
   );
 }

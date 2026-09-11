@@ -24,8 +24,8 @@ export default function Experience() {
           ))}
         </div>
 
-        <p className="edu-role">Diploma in Software Engineering — 2nd Year</p>
-        <p className="edu-meta">WeThinkCode_, Johannesburg · Oct 2025 – Feb 2027 (Expected)</p>
+        <p className="edu-role">Occupational Diploma in Software Engineering</p>
+        <p className="edu-meta">WeThinkCode_, Johannesburg · Oct 2025 – Present (Expected: Feb 2027)</p>
 
         <ul className="cert-list">
           {certs.map((c) => (
