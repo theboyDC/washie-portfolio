@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="hero-photo-col">
        
           <div className="hero-photo">
-            <img src="/washie-portrait.jpg" alt="Washington Mbeleki" />
+            <img src="/washie-portrait (Edited).jpg" alt="Washington Mbeleki" />
           </div>
         </div>
       </div>

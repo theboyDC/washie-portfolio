@@ -11,7 +11,7 @@ export default function Nav() {
             <a href="#work">Work</a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="#about">About Me</a>
           </li>
           <li>
             <a href="#stack">Stack</a>

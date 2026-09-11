@@ -158,7 +158,7 @@ export default function Work() {
       <div className="wrap">
         <div className="section-head">
           <span className="section-num">(01)</span>
-          <h2 className="section-title">Selected work</h2>
+          <h2 className="section-title">Key Projects</h2>
           <span className="section-rule" />
         </div>
         <WorkFeature p={featured} />

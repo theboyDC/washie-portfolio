@@ -129,19 +129,22 @@ a {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding: 100px 0 80px;
+  padding: 100px 0 30px;
   overflow: hidden;
+  /* background-color: #8f8a78; */
   border-bottom: 2px solid var(--line-strong);
 }
 .hero-grid {
   display: none;
 }
 .hero-inner {
+  /* background-color: #c62835; */
   position: relative;
   display: grid;
   grid-template-columns: 0.85fr 1fr;
   gap: 44px;
   align-items: stretch;
+  justify-content: space-between;
 }
 .hero-text {
   max-width: 540px;
@@ -304,11 +307,12 @@ h1.headline {
 }
 .hero-photo-col {
   position: relative;
-  order: -1;
+  /* order: -1; */
 }
 .hero-photo {
+  margin-left: 10px;
   position: relative;
-  width: 100%;
+  width: 150%;
   height: 100%;
   border: 2px solid var(--line-strong);
   border-radius: 0;
