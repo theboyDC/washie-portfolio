@@ -84,7 +84,7 @@ function Thumb({ kind }: { kind: Project["thumb"] }) {
 }
 
 function WorkRow({ p }: { p: Project }) {
-  const inner = (
+  const meta = (
     <>
       <span className="work-idx">{p.idx}</span>
       <span className="work-main">
@@ -95,20 +95,37 @@ function WorkRow({ p }: { p: Project }) {
       <span className="work-thumb">
         <Thumb kind={p.thumb} />
       </span>
-      <span className="work-arrow">{p.href ? `${p.status} →` : p.status}</span>
     </>
   );
+
+  if (p.href && p.githubHref) {
+    return (
+      <div className="work-row work-row--static">
+        {meta}
+        <span className="work-links">
+          <a href={p.href} target="_blank" rel="noopener noreferrer">
+            {p.status} →
+          </a>
+          <a href={p.githubHref} target="_blank" rel="noopener noreferrer">
+            GitHub →
+          </a>
+        </span>
+      </div>
+    );
+  }
 
   if (p.href) {
     return (
       <a className="work-row" href={p.href} target="_blank" rel="noopener noreferrer">
-        {inner}
+        {meta}
+        <span className="work-arrow">{`${p.status} →`}</span>
       </a>
     );
   }
   return (
     <div className="work-row work-row--static" aria-disabled="true">
-      {inner}
+      {meta}
+      <span className="work-arrow">{p.status}</span>
     </div>
   );
 }

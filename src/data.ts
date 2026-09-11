@@ -5,6 +5,7 @@ export interface Project {
   tags: string;
   status: string;
   href?: string;
+  githubHref?: string;
   thumb: "pipeline" | "grid" | "calendar" | "mobile" | "web" | "robot";
 }
 
@@ -16,6 +17,7 @@ export const projects: Project[] = [
     tags: "Flutter (Dart) · Node.js · Hono · Cloudflare Workers/D1/KV · MTN MoMo APIs · n8n",
     status: "Live",
     href: "https://momo-credit-app.pages.dev",
+    githubHref: "https://github.com/bhekani17/South-africa-VoiceMo-mini-app",
     thumb: "mobile",
   },
   {
@@ -34,6 +36,7 @@ export const projects: Project[] = [
     tags: "React · TypeScript · Vite · Framer Motion · Lucide React",
     status: "Live",
     href: "https://thukela-technologies.vercel.app",
+    githubHref: "https://github.com/peekay11/thukela-Technologies",
     thumb: "web",
   },
   {

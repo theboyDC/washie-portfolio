@@ -361,6 +361,23 @@ a.work-row:hover .work-title {
 .work-row--static {
   cursor: default;
 }
+.work-links {
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+.work-links a {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.work-links a:hover {
+  color: var(--ink);
+}
 .work-tags {
   font-family: var(--mono);
   font-size: 11px;
